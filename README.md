@@ -1,69 +1,71 @@
-# معرض المشاريع — محمود مراد (Demo Hub)
+# Mahmoud Mourad — Project Demos
 
-افتح `index.html` في المتصفح لعرض الصفحة الكاملة بالصور، أو راجع الملخص أدناه.
+Open `index.html` for the full page with screenshots, or read the summary below.
+
+Live at: https://mahmod-mourad.github.io/demo-hub/
 
 ---
 
-## 1) NexMart — متجر إلكتروني متكامل
+## 1) NexMart — E-Commerce Platform
 
-**بيحل مشكلة إيه؟** منصة تجارة إلكترونية كاملة: تصفح وفلترة منتجات، سلة ومفضلة، إدارة طلبات، ودفع فعلي عبر Stripe — بواجهة عربي/إنجليزي (RTL/LTR) ووضع ليلي.
+**What it solves:** a complete shop — catalogue with search, filters and pagination, cart and wishlist, Stripe checkout, order history and an admin dashboard. Payments settle through a server-side webhook; stock is reserved inside the order transaction to stop overselling. Arabic/English UI with RTL and a dark mode.
 
-- **Live:** https://nexmart.vercel.app
-- **Code:** https://github.com/Mahmod-mourad/e-commerce-platform-NexMart
-- **Stack:** Next.js 14, TypeScript, Tailwind, Stripe, PostgreSQL, JWT (HttpOnly), i18n RTL, Docker, Vercel
-- **Screenshots:** `screenshots/nexmart/` (home, products, product-detail, cart)
+- Live: https://nexmart.vercel.app
+- Code: https://github.com/Mahmod-mourad/e-commerce-platform-NexMart
+- Stack: Next.js 14, TypeScript, Tailwind, Stripe, PostgreSQL/Prisma, JWT (HttpOnly), i18n RTL, Docker
+- Screenshots: `screenshots/nexmart/` (home, products, product-detail, cart)
 
 **How to Run:**
 ```bash
 git clone https://github.com/Mahmod-mourad/e-commerce-platform-NexMart.git
 cd e-commerce-platform-NexMart
-docker compose up --build      # التطبيق: http://localhost:3000
+docker compose up --build      # App: http://localhost:3000
 ```
 
 ---
 
-## 2) Project Management System — إدارة مشاريع Multi-tenant
+## 2) Project Management System — Multi-tenant SaaS
 
-**بيحل مشكلة إيه؟** نظام SaaS لإدارة المشاريع: كل شركة (Tenant) معزولة تماماً عبر RLS Policies، مع لوحة إحصائيات حية وتحديثات Real-time (Socket.IO) وإشعارات.
+**What it solves:** a task tracker for small teams where tenant isolation is enforced at the database level with Postgres row-level security. Task board, per-project statistics, real-time updates over Socket.IO, and 151 unit/integration/e2e tests.
 
-- **Live:** https://pms-web-lilac.vercel.app
-- **Code:** https://github.com/Mahmod-mourad/Project-management-system
-- **Stack:** Next.js 14, NestJS, Supabase (PostgreSQL + Auth), RLS, Socket.IO, JWT + Bcrypt, Swagger, Jest, Vercel
-- **Screenshots:** `screenshots/pms/` (login, dashboard, projects, tasks, users)
+- Live: https://pms-web-lilac.vercel.app
+- Code: https://github.com/Mahmod-mourad/Project-management-system
+- Stack: Next.js 14, NestJS, Supabase/PostgreSQL + RLS, Socket.IO, JWT + bcrypt, Swagger, Jest
+- Screenshots: `screenshots/pms/` (login, dashboard, projects, tasks, users)
 
 **How to Run:**
 ```bash
-npx supabase start                                   # 1) قاعدة البيانات
-psql "$DB_URL" -f scripts/01-tenants-and-plans.sql   # 2) السكيما + seed (01 → 04 بالترتيب)
+npx supabase start                                   # 1) Local database
+psql "$DB_URL" -f scripts/01-tenants-and-plans.sql   # 2) Schema + seed (01 → 04 in order)
 psql "$DB_URL" -f scripts/02-profiles-projects-tasks.sql
 psql "$DB_URL" -f scripts/03-notifications.sql
 psql "$DB_URL" -f scripts/04-seed-demo-data.sql
 
-cd backend                                           # 3) الباك اند (3001)
+cd backend                                           # 3) Backend on 3001
 SUPABASE_URL=http://127.0.0.1:54321 \
 SUPABASE_SERVICE_ROLE_KEY=... npm run start:dev
 
-NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1 npm run dev   # 4) الفرونت
+NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1 npm run dev   # 4) Frontend
 ```
-**حساب تجريبي:** `admin@demo.localhost` / `DemoPassword123!` (وحساب `member@demo.localhost`).
+**Demo login:** `admin@demo.localhost` / `DemoPassword123!` (member account: `member@demo.localhost`, same password).
 
 ---
 
-## 3) Car Rental System — نظام تأجير سيارات
+## 3) Car Rental System
 
-**بيحل مشكلة إيه؟** منصة حجز سيارات عربية بالكامل (RTL): فلترة متقدمة، بحث جغرافي قرب الفروع (PostGIS)، حجز ودفع، ولوحة أدمن لإدارة الأسطول.
+**What it solves:** an Arabic RTL car booking platform. Filters on transmission, fuel, seats and price; radius search around branches with PostGIS; bookings with payments and refunds; reviews with owner replies; admin fleet dashboard. One docker compose command runs the whole stack.
 
-- **Code:** https://github.com/Mahmod-mourad/Car-Rental-System
-- **Stack:** Next.js (RTL), NestJS, PostgreSQL + PostGIS, TypeORM, JWT, Swagger, Docker Compose
-- **Screenshots:** `screenshots/car-rental/` (home, cars, car-detail, swagger)
+- Code: https://github.com/Mahmod-mourad/Car-Rental-System
+- Stack: Next.js (RTL), NestJS, PostgreSQL + PostGIS, TypeORM, JWT, Swagger, Docker Compose
+- Screenshots: `screenshots/car-rental/` (home, cars, car-detail, swagger)
 
-**How to Run (أمر واحد):**
+**How to Run:**
 ```bash
 git clone https://github.com/Mahmod-mourad/Car-Rental-System.git
 cd Car-Rental-System
 docker compose up --build
 ```
-| الخدمة | الرابط |
+| Service | URL |
 |---|---|
 | Web | http://localhost:3000 |
 | API | http://localhost:3001 |
@@ -71,8 +73,8 @@ docker compose up --build
 
 ---
 
-## ملاحظات مهمة للعرض في المقابلات
+## Notes for interviews
 
-- **كل اللقطات حقيقية** — مأخوذة من التطبيقات وهي شغّالة محلياً ببيانات حقيقية من قواعد البيانات.
-- **Lives منشورة:** NexMart وPMS على Vercel. Car Rental يعمل بـ Docker Compose محلياً (يعرض مهارات Docker).
-- تم إصلاح باج SQL حقيقي في Car Rental (endpoint السيارات المشابهة `/vehicles/similar/:id` كان بيرجع 500 بسبب استعلام خام بأسماء جداول/parameters غلط) — قصة ممتازة تُحكى في الانترفيو.
+- **Every screenshot is real** — taken from the running apps with real data.
+- **Live deployments:** NexMart and PMS are on Vercel. Car Rental runs locally with Docker (a good Docker story to tell).
+- A story worth telling: in Car Rental I fixed a genuine bug where the similar-cars endpoint `/vehicles/similar/:id` returned 500 because of a raw SQL query with the wrong table name and unbound parameters. It's a real debugging story, not a rehearsed one.

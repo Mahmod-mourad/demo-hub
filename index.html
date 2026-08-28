@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محمود مراد — معرض المشاريع (Live Demos)</title>
+<title>Mahmoud Mourad — Project Demos & Screenshots</title>
 <style>
   :root {
     --bg: #0f1117; --card: #171a23; --card-2: #1d212d;
     --text: #e8eaf0; --muted: #9aa1b2; --accent: #4f8cff; --border: #2a2f3d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 80px; }
-  header.hero { text-align: center; padding: 56px 0 40px; }
-  header.hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+  body { font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+  .container { max-width: 1050px; margin: 0 auto; padding: 24px 20px 80px; }
+  header.hero { text-align: center; padding: 56px 0 36px; }
+  header.hero h1 { font-size: 2rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em; }
   header.hero h1 span { color: var(--accent); }
   header.hero p { color: var(--muted); max-width: 720px; margin: 0 auto; }
-  .stats { display: flex; gap: 14px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
-  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px 22px; }
-  .stat b { color: var(--accent); font-size: 1.25rem; display: block; text-align: center; }
+  .stats { display: flex; gap: 12px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px 20px; }
+  .stat b { color: var(--accent); font-size: 1.2rem; display: block; text-align: center; }
   .stat small { color: var(--muted); }
-  .project { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 34px; margin-top: 44px; }
+  .project { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px; margin-top: 40px; }
   .project-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-  .project-head h2 { font-size: 1.55rem; }
-  .num { background: linear-gradient(135deg, var(--accent), #7c5cff); width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0; }
-  .links { margin-right: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+  .project-head h2 { font-size: 1.45rem; font-weight: 700; }
+  .num { background: linear-gradient(135deg, var(--accent), #7c5cff); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .links { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; }
   .btn { display: inline-block; padding: 8px 18px; border-radius: 10px; text-decoration: none; font-size: .9rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); transition: .2s; }
   .btn:hover { border-color: var(--accent); }
   .btn.live { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn.live:hover { filter: brightness(1.1); }
-  .problem { color: var(--muted); margin: 14px 0 4px; }
+  .problem { color: var(--muted); margin: 14px 0 2px; font-size: 1.02rem; }
   .problem b { color: var(--text); }
-  h3.section { margin: 30px 0 14px; font-size: 1.05rem; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+  h3.section { margin: 28px 0 12px; font-size: 1rem; color: var(--accent); font-weight: 700; }
   .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
   .shot { background: var(--card-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
   .shot img { width: 100%; display: block; }
@@ -53,154 +53,145 @@
 <div class="container">
 
   <header class="hero">
-    <h1>محمود مراد — <span>معرض المشاريع</span></h1>
-    <p>ثلاثة مشاريع Full-Stack كاملة: متجر إلكتروني، نظام إدارة مشاريع متعدد الشركات (Multi-tenant)، ونظام تأجير سيارات. كل مشروع شغّال محلياً بلقطات حقيقية من التطبيق وقت تشغيله، وبعضها منشور مباشرة على الإنترنت.</p>
+    <h1>Mahmoud Mourad — <span>Project Demos</span></h1>
+    <p>Three full-stack projects I built and can walk through line by line. Everything below is real: the apps run against actual databases, the screenshots come from the running apps, and two of the projects are deployed and live. Clone them, run them, break them, ask me why.</p>
     <div class="stats">
-      <div class="stat"><b>3</b><small>مشاريع كاملة</small></div>
-      <div class="stat"><b>Next.js</b><small>Frontend</small></div>
-      <div class="stat"><b>NestJS</b><small>Backend</small></div>
-      <div class="stat"><b>PostgreSQL</b><small>Database</small></div>
-      <div class="stat"><b>Docker</b><small>Deployment</small></div>
+      <div class="stat"><b>3</b><small>full-stack builds</small></div>
+      <div class="stat"><b>Next.js</b><small>frontend</small></div>
+      <div class="stat"><b>NestJS</b><small>backend</small></div>
+      <div class="stat"><b>PostgreSQL</b><small>database</small></div>
+      <div class="stat"><b>Docker</b><small>deployment</small></div>
     </div>
   </header>
-
-  <!-- ============ 1. NexMart ============ -->
+<!-- ============ 1. NexMart ============ -->
   <section class="project" id="nexmart">
     <div class="project-head">
       <div class="num">1</div>
-      <h2>NexMart — متجر إلكتروني متكامل</h2>
+      <h2>NexMart — E-Commerce Platform</h2>
       <div class="links">
-        <a class="btn live" href="https://nexmart.vercel.app" target="_blank">🚀 Live Demo</a>
-        <a class="btn" href="https://github.com/Mahmod-mourad/e-commerce-platform-NexMart" target="_blank">GitHub Repo</a>
+        <a class="btn live" href="https://nexmart.vercel.app" target="_blank">Live Demo</a>
+        <a class="btn" href="https://github.com/Mahmod-mourad/e-commerce-platform-NexMart" target="_blank">GitHub</a>
       </div>
     </div>
-    <p class="problem"><b>بيحل مشكلة إيه؟</b> منصة تجارة إلكترونية كاملة: تصفح وفلترة المنتجات، سلة مشتريات ومفضلة، إدارة طلبات، ودفع فعلي عبر Stripe — بواجهة تدعم العربية والإنجليزية (RTL/LTR) والوضع الليلي.</p>
+    <p class="problem"><b>What it solves:</b> most product demos online are a handful of mocked components. This is a full shop — catalogue with search, filters and pagination, cart and wishlist, Stripe checkout, order history and an admin dashboard. Payments are settled by a server-side webhook, and stock is reserved inside the order transaction so two shoppers can't race the last unit.</p>
 
-    <h3 class="section">📸 Screenshots — التطبيق شغّال</h3>
+    <h3 class="section">Screenshots — the app running</h3>
     <div class="shots">
-      <figure class="shot"><img src="screenshots/nexmart/home.png" alt="NexMart home"><figcaption>الصفحة الرئيسية — هيرو، منتجات مميزة، وتصنيفات</figcaption></figure>
-      <figure class="shot"><img src="screenshots/nexmart/products.png" alt="NexMart products"><figcaption>صفحة المنتجات — بحث وفلترة وتصفيح</figcaption></figure>
-      <figure class="shot"><img src="screenshots/nexmart/product-detail.png" alt="NexMart product detail"><figcaption>تفاصيل المنتج — جاليري صور وتقييمات ومنتجات مشابهة</figcaption></figure>
-      <figure class="shot"><img src="screenshots/nexmart/cart.png" alt="NexMart cart"><figcaption>سلة المشتريات — تعديل الكميات وملخص الطلب</figcaption></figure>
+      <figure class="shot"><img src="screenshots/nexmart/home.png" alt="NexMart home page"><figcaption>Home — hero, featured products, categories, deals</figcaption></figure>
+      <figure class="shot"><img src="screenshots/nexmart/products.png" alt="NexMart products page"><figcaption>Product listing — search, filters, pagination</figcaption></figure>
+      <figure class="shot"><img src="screenshots/nexmart/product-detail.png" alt="NexMart product detail"><figcaption>Product page — gallery, reviews, related items</figcaption></figure>
+      <figure class="shot"><img src="screenshots/nexmart/cart.png" alt="NexMart cart"><figcaption>Cart — quantities, order summary</figcaption></figure>
     </div>
 
-    <h3 class="section">🛠 Tech Stack</h3>
+    <h3 class="section">Tech Stack</h3>
     <div class="stack">
       <span class="tag hot">Next.js 14</span><span class="tag hot">TypeScript</span>
-      <span class="tag">Tailwind CSS</span><span class="tag">Stripe API (Checkout)</span>
-      <span class="tag">PostgreSQL</span><span class="tag">JWT Auth (HttpOnly Cookies)</span>
-      <span class="tag">i18n — عربي/EN + RTL</span><span class="tag">Docker Compose</span>
-      <span class="tag">Vercel</span>
+      <span class="tag">Tailwind CSS</span><span class="tag">Stripe (webhooks + checkout)</span>
+      <span class="tag">PostgreSQL / Prisma</span><span class="tag">JWT in HttpOnly cookies</span>
+      <span class="tag">Arabic/English i18n + RTL</span><span class="tag">Docker Compose</span>
     </div>
 
-    <h3 class="section">⚙️ How to Run</h3>
-    <pre><span class="c"># الطريقة السريعة — يشغّل PostgreSQL + migrations + seed + التطبيق كله</span>
+    <h3 class="section">How to Run</h3>
+    <pre><span class="c"># The quick route — one command brings up Postgres, migrations, seed data and the app.</span>
 git clone https://github.com/Mahmod-mourad/e-commerce-platform-NexMart.git
-
-  <!-- ============ 2. PMS ============ -->
+cd e-commerce-platform-NexMart
+docker compose up --build
+<span class="c"># App: http://localhost:3000</span></pre>
+    <div class="note"><b>No setup needed:</b> payments run on Stripe test keys until you add your own to <code dir="ltr">.env</code>. Nothing is mocked — the catalogue, reviews and orders are real database rows.</div>
+<!-- ============ 2. PMS ============ -->
   <section class="project" id="pms">
     <div class="project-head">
       <div class="num">2</div>
-      <h2>Project Management System — إدارة مشاريع Multi-tenant</h2>
+      <h2>Project Management System — Multi-tenant SaaS</h2>
       <div class="links">
-        <a class="btn live" href="https://pms-web-lilac.vercel.app" target="_blank">🚀 Live Demo</a>
-        <a class="btn" href="https://github.com/Mahmod-mourad/Project-management-system" target="_blank">GitHub Repo</a>
+        <a class="btn live" href="https://pms-web-lilac.vercel.app" target="_blank">Live Demo</a>
+        <a class="btn" href="https://github.com/Mahmod-mourad/Project-management-system" target="_blank">GitHub</a>
       </div>
     </div>
-    <p class="problem"><b>بيحل مشكلة إيه؟</b> نظام SaaS لإدارة المشاريع بمعمارية Multi-tenant: كل شركة (Tenant) لها مستخدموها ومشاريعها ومهامها ومعزولة تماماً عن غيرها عبر RLS Policies — مع لوحة إحصائيات حية (Charts) وتحديثات Real-time عبر Socket.IO وإشعارات فورية.</p>
+    <p class="problem"><b>What it solves:</b> a task tracker for small teams, but built properly: every company that signs up gets its own tenant, and the isolation is enforced in the database with Postgres row-level security — not just in application code. There's a task board, per-project statistics, real-time updates over Socket.IO, and a test suite covering unit, integration and e2e.</p>
 
-    <h3 class="section">📸 Screenshots — التطبيق شغّال (بحساب حقيقي)</h3>
+    <h3 class="section">Screenshots — logged in, real data</h3>
     <div class="shots">
-      <figure class="shot"><img src="screenshots/pms/dashboard.png" alt="PMS dashboard"><figcaption>الـ Dashboard — إحصائيات ومخططات حالة المهام والمهام لكل مشروع</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/projects.png" alt="PMS projects"><figcaption>إدارة المشاريع — إنشاء وتعديل وحذف مع بحث وفلترة</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/tasks.png" alt="PMS tasks"><figcaption>المهام — حالات وأولويات وتواريخ استحقاق</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/users.png" alt="PMS users"><figcaption>إدارة المستخدمين — إضافة أعضاء للفريق (Admin only)</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/dashboard.png" alt="PMS dashboard"><figcaption>Dashboard — live stats and charts</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/projects.png" alt="PMS projects"><figcaption>Projects — create, edit, search, filter</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/tasks.png" alt="PMS tasks"><figcaption>Tasks — status, priority, due dates</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/users.png" alt="PMS users"><figcaption>User management — admin only</figcaption></figure>
     </div>
 
-    <h3 class="section">🛠 Tech Stack</h3>
+    <h3 class="section">Tech Stack</h3>
     <div class="stack">
       <span class="tag hot">Next.js 14</span><span class="tag hot">NestJS</span>
-      <span class="tag hot">Supabase (PostgreSQL + Auth)</span>
-      <span class="tag">Multi-tenant + RLS Policies</span>
-      <span class="tag">Socket.IO (Real-time)</span>
+      <span class="tag hot">Supabase / PostgreSQL + RLS</span>
+      <span class="tag">Socket.IO real-time</span>
       <span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
-      <span class="tag">JWT + Bcrypt</span><span class="tag">Swagger API Docs</span>
-      <span class="tag">Jest (Unit + Integration + E2E)</span>
-      <span class="tag">Vercel</span>
+      <span class="tag">JWT + bcrypt</span><span class="tag">Swagger API docs</span>
+      <span class="tag">Jest — 151 tests</span>
     </div>
 
-    <h3 class="section">⚙️ How to Run</h3>
-    <pre><span class="c"># 1) قاعدة البيانات المحلية (Supabase)</span>
+    <h3 class="section">How to Run</h3>
+    <pre><span class="c"># 1) Local database (Supabase CLI)</span>
 npx supabase start
-<span class="c"># 2) السكيما والبيانات التجريبية — بالترتيب</span>
+<span class="c"># 2) Schema and seed data — apply in order</span>
 psql "$DB_URL" -f scripts/01-tenants-and-plans.sql
 psql "$DB_URL" -f scripts/02-profiles-projects-tasks.sql
-psql "$DB_URL" -f scripts/03-notifications.sql
-psql "$DB_URL" -f scripts/04-seed-demo-data.sql
-
-<span class="c"># 3) الباك اند (NestJS على 3001) — بيتحط URL والـ Service Role Key بتوع Supabase</span>
-cd backend
-
-  <!-- ============ 3. Car Rental ============ -->
+<!-- ============ 3. Car Rental ============ -->
   <section class="project" id="car-rental">
     <div class="project-head">
       <div class="num">3</div>
-      <h2>Car Rental System — نظام تأجير سيارات</h2>
+      <h2>Car Rental System</h2>
       <div class="links">
-        <a class="btn" href="https://github.com/Mahmod-mourad/Car-Rental-System" target="_blank">GitHub Repo</a>
+        <a class="btn" href="https://github.com/Mahmod-mourad/Car-Rental-System" target="_blank">GitHub</a>
       </div>
     </div>
-    <p class="problem"><b>بيحل مشكلة إيه؟</b> منصة حجز سيارات بالعربية (RTL بالكامل): بحث وفلترة متقدمة (ناقل حركة، وقود، مقاعد، سعر، تقييم)، بحث جغرافي بالقرب من أقرب فرع (PostGIS Radius Search)، حجز ودفع وتتبع الحجوزات، ولوحة تحكم للأدمن لإدارة الأسطول.</p>
+    <p class="problem"><b>What it solves:</b> an RTL-first car booking platform. Filters on transmission, fuel, seats and price; a radius search that finds cars near a specific branch using PostGIS; a booking flow with payments and refunds; reviews with owner replies; and an admin dashboard for the fleet. The whole thing — PostGIS included — starts with one docker compose command.</p>
 
-    <h3 class="section">📸 Screenshots — التطبيق شغّال</h3>
+    <h3 class="section">Screenshots — the app running</h3>
     <div class="shots">
-      <figure class="shot"><img src="screenshots/car-rental/home.png" alt="Car rental home"><figcaption>الصفحة الرئيسية — واجهة عربية RTL مع أقسام وسيارات مميزة</figcaption></figure>
-      <figure class="shot"><img src="screenshots/car-rental/cars.png" alt="Car rental cars listing"><figcaption>قائمة السيارات — بيانات حقيقية من قاعدة البيانات</figcaption></figure>
-      <figure class="shot"><img src="screenshots/car-rental/car-detail.png" alt="Car detail"><figcaption>تفاصيل السيارة — مواصفات ومميزات وسعر يومي وسيارات مشابهة</figcaption></figure>
-      <figure class="shot"><img src="screenshots/car-rental/swagger.png" alt="Swagger API docs"><figcaption>توثيق الـ API الكامل عبر Swagger</figcaption></figure>
+      <figure class="shot"><img src="screenshots/car-rental/home.png" alt="Car rental home"><figcaption>Home — Arabic RTL layout</figcaption></figure>
+      <figure class="shot"><img src="screenshots/car-rental/cars.png" alt="Car listing"><figcaption>Cars listing — real data from the database</figcaption></figure>
+      <figure class="shot"><img src="screenshots/car-rental/car-detail.png" alt="Car detail page"><figcaption>Car details — specs, daily rate, similar cars</figcaption></figure>
+      <figure class="shot"><img src="screenshots/car-rental/swagger.png" alt="Swagger API docs"><figcaption>Swagger — the full API documented</figcaption></figure>
     </div>
 
-    <h3 class="section">🛠 Tech Stack</h3>
+    <h3 class="section">Tech Stack</h3>
     <div class="stack">
-      <span class="tag hot">Next.js (RTL عربي)</span><span class="tag hot">NestJS</span>
+      <span class="tag hot">Next.js — Arabic RTL</span><span class="tag hot">NestJS</span>
       <span class="tag hot">PostgreSQL + PostGIS</span>
-      <span class="tag">TypeORM + Migrations</span>
-      <span class="tag">JWT Auth</span><span class="tag">Swagger</span>
+      <span class="tag">TypeORM + migrations</span>
+      <span class="tag">JWT auth</span><span class="tag">Swagger</span>
       <span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
-      <span class="tag">Docker Compose (3 خدمات)</span>
+      <span class="tag">Docker Compose — 3 services</span>
     </div>
 
-    <h3 class="section">⚙️ How to Run</h3>
-    <pre><span class="c"># أمر واحد يشغّل كل حاجة: PostGIS + Migrations + Seed + الاتنين apps</span>
+    <h3 class="section">How to Run</h3>
+    <pre><span class="c"># One command: PostGIS, migrations, seed data, web app and API.</span>
 git clone https://github.com/Mahmod-mourad/Car-Rental-System.git
 cd Car-Rental-System
 docker compose up --build</pre>
     <table class="endpoints">
-      <tr><td>🌐 Web App</td><td dir="ltr">http://localhost:3000</td></tr>
-      <tr><td>🔌 API</td><td dir="ltr">http://localhost:3001</td></tr>
-      <tr><td>📚 Swagger</td><td dir="ltr">http://localhost:3001/api</td></tr>
+      <tr><td>Web app</td><td dir="ltr">http://localhost:3000</td></tr>
+      <tr><td>API</td><td dir="ltr">http://localhost:3001</td></tr>
+      <tr><td>Swagger</td><td dir="ltr">http://localhost:3001/api</td></tr>
     </table>
   </section>
 
   <footer>
-    محمود مراد — Full-Stack Developer ·
+    Mahmoud Mourad — Full-Stack Developer ·
     <a href="https://github.com/Mahmod-mourad" target="_blank">github.com/Mahmod-mourad</a>
   </footer>
 </div>
 </body>
 </html>
+psql "$DB_URL" -f scripts/03-notifications.sql
+psql "$DB_URL" -f scripts/04-seed-demo-data.sql
 
+<span class="c"># 3) Backend (NestJS on 3001) — needs Supabase URL + service role key</span>
+cd backend
 SUPABASE_URL=http://127.0.0.1:54321 SUPABASE_SERVICE_ROLE_KEY=... npm run start:dev
 
-<span class="c"># 4) الفرونت اند</span>
+<span class="c"># 4) Frontend</span>
 NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1 npm run dev
-<span class="c"># التطبيق: http://localhost:3000</span></pre>
-    <div class="note"><b>حساب تجريبي جاهز:</b> <code dir="ltr">admin@demo.localhost</code> / <code dir="ltr">DemoPassword123!</code> — تاني حساب: <code dir="ltr">member@demo.localhost</code> بنفس كلمة السر.</div>
+<span class="c"># App: http://localhost:3000</span></pre>
+    <div class="note"><b>Demo login:</b> <code dir="ltr">admin@demo.localhost</code> / <code dir="ltr">DemoPassword123!</code> — there's also a member account, same password, at <code dir="ltr">member@demo.localhost</code>.</div>
   </section>
-
-cd e-commerce-platform-NexMart
-docker compose up --build
-<span class="c"># التطبيق: http://localhost:3000</span></pre>
-    <div class="note"><b>ملاحظة:</b> لا يحتاج أي إعداد — المدفوعات تعمل بمفاتيح Stripe التجريبية حتى تضيف مفاتيحك الحقيقية في <code dir="ltr">.env</code>.</div>
   </section>
-
