@@ -10,7 +10,7 @@
     --text: #e8eaf0; --muted: #9aa1b2; --accent: #4f8cff; --border: #2a2f3d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+  body { font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; -webkit-font-smoothing: antialiased; }
   .container { max-width: 1050px; margin: 0 auto; padding: 24px 20px 80px; }
   header.hero { text-align: center; padding: 56px 0 36px; }
   header.hero h1 { font-size: 2rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em; }
@@ -25,21 +25,22 @@
   .project-head h2 { font-size: 1.45rem; font-weight: 700; }
   .num { background: linear-gradient(135deg, var(--accent), #7c5cff); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
   .links { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 8px 18px; border-radius: 10px; text-decoration: none; font-size: .9rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); transition: .2s; }
-  .btn:hover { border-color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px 18px; border-radius: 10px; text-decoration: none; font-size: .9rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); transition: all .2s ease; min-height: 44px; }
+  .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
   .btn.live { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn.live:hover { filter: brightness(1.1); }
   .problem { color: var(--muted); margin: 14px 0 2px; font-size: 1.02rem; }
   .problem b { color: var(--text); }
   h3.section { margin: 28px 0 12px; font-size: 1rem; color: var(--accent); font-weight: 700; }
   .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-  .shot { background: var(--card-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .shot { background: var(--card-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform .2s ease; }
+  .shot:hover { transform: translateY(-2px); }
   .shot img { width: 100%; display: block; }
   .shot figcaption { padding: 9px 14px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border); }
   .stack { display: flex; flex-wrap: wrap; gap: 9px; }
   .tag { background: var(--card-2); border: 1px solid var(--border); padding: 5px 14px; border-radius: 999px; font-size: .85rem; }
   .tag.hot { border-color: var(--accent); color: var(--accent); }
-  pre { background: #0b0d13; border: 1px solid var(--border); border-radius: 12px; padding: 18px; overflow-x: auto; font-size: .85rem; direction: ltr; text-align: left; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  pre { background: #0b0d13; border: 1px solid var(--border); border-radius: 12px; padding: 18px; overflow-x: auto; font-size: .85rem; direction: ltr; text-align: left; font-family: "SF Mono", Menlo, Consolas, monospace; -webkit-overflow-scrolling: touch; }
   pre .c { color: #6a7385; }
   .note { background: rgba(79,140,255,.08); border: 1px solid rgba(79,140,255,.3); border-radius: 10px; padding: 12px 16px; font-size: .9rem; margin-top: 12px; }
   .note b { color: var(--accent); }
@@ -47,6 +48,67 @@
   .endpoints td { padding: 2px 18px 2px 0; }
   footer { text-align: center; color: var(--muted); margin-top: 70px; font-size: .9rem; }
   footer a { color: var(--accent); text-decoration: none; }
+
+  /* ===== Tablet (768px and below) ===== */
+  @media (max-width: 768px) {
+    .container { padding: 16px 16px 60px; }
+    header.hero { padding: 36px 0 24px; }
+    header.hero h1 { font-size: 1.5rem; }
+    header.hero p { font-size: .95rem; }
+    .stats { gap: 8px; margin-top: 20px; }
+    .stat { padding: 8px 14px; }
+    .stat b { font-size: 1rem; }
+    .project { padding: 20px; margin-top: 28px; border-radius: 14px; }
+    .project-head { gap: 10px; }
+    .project-head h2 { font-size: 1.2rem; }
+    .num { width: 34px; height: 34px; border-radius: 10px; font-size: .9rem; }
+    .links { margin-left: 0; width: 100%; }
+    .btn { padding: 10px 16px; font-size: .85rem; }
+    .problem { font-size: .95rem; }
+    h3.section { margin: 22px 0 10px; font-size: .95rem; }
+    .shots { grid-template-columns: 1fr; gap: 12px; }
+    .shot figcaption { padding: 8px 12px; font-size: .8rem; }
+    .tag { padding: 6px 12px; font-size: .8rem; }
+    pre { padding: 14px; font-size: .8rem; }
+    .note { padding: 10px 14px; font-size: .85rem; }
+    .endpoints { font-size: .85rem; }
+    .endpoints td { padding: 2px 12px 2px 0; }
+    footer { margin-top: 50px; font-size: .85rem; }
+  }
+
+  /* ===== Small Mobile (480px and below) ===== */
+  @media (max-width: 480px) {
+    .container { padding: 12px 12px 40px; }
+    header.hero { padding: 28px 0 20px; }
+    header.hero h1 { font-size: 1.3rem; margin-bottom: 8px; }
+    header.hero p { font-size: .9rem; }
+    .stats { gap: 6px; }
+    .stat { padding: 6px 10px; flex: 1 1 calc(50% - 6px); min-width: 0; }
+    .stat b { font-size: .95rem; }
+    .project { padding: 16px; margin-top: 24px; }
+    .project-head { flex-direction: column; align-items: flex-start; }
+    .links { width: 100%; }
+    .btn { flex: 1; }
+    .problem { font-size: .9rem; }
+    .shots { gap: 10px; }
+    pre { padding: 12px; font-size: .75rem; border-radius: 10px; }
+    .note { padding: 10px 12px; }
+  }
+
+  /* ===== Large Tablet (769px - 1024px) ===== */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container { padding: 20px 24px 70px; }
+    .project { padding: 28px; }
+    .shots { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  }
+
+  /* ===== Touch Device Optimizations ===== */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:hover { border-color: var(--border); transform: none; }
+    .btn:active { border-color: var(--accent); background: rgba(79,140,255,.1); }
+    .btn.live:active { filter: brightness(.9); }
+    .shot:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -54,7 +116,7 @@
 
   <header class="hero">
     <h1>Mahmoud Mourad — <span>Project Demos</span></h1>
-    <p>Three full-stack projects I built and can walk through line by line. Everything below is real: the apps run against actual databases, the screenshots come from the running apps, and two of the projects are deployed and live. Clone them, run them, break them, ask me why.</p>
+    <p>Three full-stack projects I built and can walk through line by line. Everything below is real: the apps run against actual databases, the screenshots come from the running apps, and NexMart is deployed and live. Clone them, run them, break them, ask me why.</p>
     <div class="stats">
       <div class="stat"><b>3</b><small>full-stack builds</small></div>
       <div class="stat"><b>Next.js</b><small>frontend</small></div>
@@ -69,7 +131,7 @@
       <div class="num">1</div>
       <h2>NexMart — E-Commerce Platform</h2>
       <div class="links">
-        <a class="btn live" href="https://nexmart.vercel.app" target="_blank">Live Demo</a>
+        <a class="btn live" href="https://nexmart-iota.vercel.app" target="_blank">Live Demo</a>
         <a class="btn" href="https://github.com/Mahmod-mourad/e-commerce-platform-NexMart" target="_blank">GitHub</a>
       </div>
     </div>
@@ -85,7 +147,7 @@
 
     <h3 class="section">Tech Stack</h3>
     <div class="stack">
-      <span class="tag hot">Next.js 14</span><span class="tag hot">TypeScript</span>
+      <span class="tag hot">Next.js 15</span><span class="tag hot">TypeScript</span>
       <span class="tag">Tailwind CSS</span><span class="tag">Stripe (webhooks + checkout)</span>
       <span class="tag">PostgreSQL / Prisma</span><span class="tag">JWT in HttpOnly cookies</span>
       <span class="tag">Arabic/English i18n + RTL</span><span class="tag">Docker Compose</span>
@@ -98,13 +160,14 @@ cd e-commerce-platform-NexMart
 docker compose up --build
 <span class="c"># App: http://localhost:3000</span></pre>
     <div class="note"><b>No setup needed:</b> payments run on Stripe test keys until you add your own to <code dir="ltr">.env</code>. Nothing is mocked — the catalogue, reviews and orders are real database rows.</div>
+  </section>
+
 <!-- ============ 2. PMS ============ -->
   <section class="project" id="pms">
     <div class="project-head">
       <div class="num">2</div>
       <h2>Project Management System — Multi-tenant SaaS</h2>
       <div class="links">
-        <a class="btn live" href="https://pms-web-lilac.vercel.app" target="_blank">Live Demo</a>
         <a class="btn" href="https://github.com/Mahmod-mourad/Project-management-system" target="_blank">GitHub</a>
       </div>
     </div>
@@ -120,7 +183,7 @@ docker compose up --build
 
     <h3 class="section">Tech Stack</h3>
     <div class="stack">
-      <span class="tag hot">Next.js 14</span><span class="tag hot">NestJS</span>
+      <span class="tag hot">Next.js 16</span><span class="tag hot">NestJS</span>
       <span class="tag hot">Supabase / PostgreSQL + RLS</span>
       <span class="tag">Socket.IO real-time</span>
       <span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
@@ -134,6 +197,19 @@ npx supabase start
 <span class="c"># 2) Schema and seed data — apply in order</span>
 psql "$DB_URL" -f scripts/01-tenants-and-plans.sql
 psql "$DB_URL" -f scripts/02-profiles-projects-tasks.sql
+psql "$DB_URL" -f scripts/03-notifications.sql
+psql "$DB_URL" -f scripts/04-seed-demo-data.sql
+
+<span class="c"># 3) Backend (NestJS on 3001) — needs Supabase URL + service role key</span>
+cd backend
+SUPABASE_URL=http://127.0.0.1:54321 SUPABASE_SERVICE_ROLE_KEY=... npm run start:dev
+
+<span class="c"># 4) Frontend</span>
+NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1 npm run dev
+<span class="c"># App: http://localhost:3000</span></pre>
+    <div class="note"><b>Demo login:</b> <code dir="ltr">admin@demo.localhost</code> / <code dir="ltr">DemoPassword123!</code> — there's also a member account, same password, at <code dir="ltr">member@demo.localhost</code>.</div>
+  </section>
+
 <!-- ============ 3. Car Rental ============ -->
   <section class="project" id="car-rental">
     <div class="project-head">
@@ -182,16 +258,3 @@ docker compose up --build</pre>
 </div>
 </body>
 </html>
-psql "$DB_URL" -f scripts/03-notifications.sql
-psql "$DB_URL" -f scripts/04-seed-demo-data.sql
-
-<span class="c"># 3) Backend (NestJS on 3001) — needs Supabase URL + service role key</span>
-cd backend
-SUPABASE_URL=http://127.0.0.1:54321 SUPABASE_SERVICE_ROLE_KEY=... npm run start:dev
-
-<span class="c"># 4) Frontend</span>
-NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1 npm run dev
-<span class="c"># App: http://localhost:3000</span></pre>
-    <div class="note"><b>Demo login:</b> <code dir="ltr">admin@demo.localhost</code> / <code dir="ltr">DemoPassword123!</code> — there's also a member account, same password, at <code dir="ltr">member@demo.localhost</code>.</div>
-  </section>
-  </section>

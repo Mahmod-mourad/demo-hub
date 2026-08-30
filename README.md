@@ -10,7 +10,7 @@ Live at: https://mahmod-mourad.github.io/demo-hub/
 
 **What it solves:** a complete shop — catalogue with search, filters and pagination, cart and wishlist, Stripe checkout, order history and an admin dashboard. Payments settle through a server-side webhook; stock is reserved inside the order transaction to stop overselling. Arabic/English UI with RTL and a dark mode.
 
-- Live: https://nexmart.vercel.app
+- Live: https://nexmart-iota.vercel.app
 - Code: https://github.com/Mahmod-mourad/e-commerce-platform-NexMart
 - Stack: Next.js 14, TypeScript, Tailwind, Stripe, PostgreSQL/Prisma, JWT (HttpOnly), i18n RTL, Docker
 - Screenshots: `screenshots/nexmart/` (home, products, product-detail, cart)
@@ -28,7 +28,6 @@ docker compose up --build      # App: http://localhost:3000
 
 **What it solves:** a task tracker for small teams where tenant isolation is enforced at the database level with Postgres row-level security. Task board, per-project statistics, real-time updates over Socket.IO, and 151 unit/integration/e2e tests.
 
-- Live: https://pms-web-lilac.vercel.app
 - Code: https://github.com/Mahmod-mourad/Project-management-system
 - Stack: Next.js 14, NestJS, Supabase/PostgreSQL + RLS, Socket.IO, JWT + bcrypt, Swagger, Jest
 - Screenshots: `screenshots/pms/` (login, dashboard, projects, tasks, users)
@@ -76,5 +75,5 @@ docker compose up --build
 ## Notes for interviews
 
 - **Every screenshot is real** — taken from the running apps with real data.
-- **Live deployments:** NexMart and PMS are on Vercel. Car Rental runs locally with Docker (a good Docker story to tell).
+- **Live deployment:** NexMart is on Vercel. PMS and Car Rental run locally — follow the run guides above (a good Docker story to tell for Car Rental).
 - A story worth telling: in Car Rental I fixed a genuine bug where the similar-cars endpoint `/vehicles/similar/:id` returned 500 because of a raw SQL query with the wrong table name and unbound parameters. It's a real debugging story, not a rehearsed one.
