@@ -168,17 +168,21 @@ docker compose up --build
       <div class="num">2</div>
       <h2>Project Management System — Multi-tenant SaaS</h2>
       <div class="links">
+        <a class="btn live" href="https://pms-web-lilac.vercel.app" target="_blank">Live Demo</a>
         <a class="btn" href="https://github.com/Mahmod-mourad/Project-management-system" target="_blank">GitHub</a>
       </div>
     </div>
-    <p class="problem"><b>What it solves:</b> a task tracker for small teams, but built properly: every company that signs up gets its own tenant, and the isolation is enforced in the database with Postgres row-level security — not just in application code. There's a task board, per-project statistics, real-time updates over Socket.IO, and a test suite covering unit, integration and e2e.</p>
+    <p class="problem"><b>What it solves:</b> a task tracker for small teams, but built properly: every company on the platform gets its own tenant, and the isolation is enforced in the database with Postgres row-level security — not just in application code. There's a task board, per-project statistics, real-time updates over Socket.IO, and a test suite covering unit, integration and e2e.</p>
 
     <h3 class="section">Screenshots — logged in, real data</h3>
     <div class="shots">
       <figure class="shot"><img src="screenshots/pms/dashboard.png" alt="PMS dashboard"><figcaption>Dashboard — live stats and charts</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/projects.png" alt="PMS projects"><figcaption>Projects — create, edit, search, filter</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/tasks.png" alt="PMS tasks"><figcaption>Tasks — status, priority, due dates</figcaption></figure>
-      <figure class="shot"><img src="screenshots/pms/users.png" alt="PMS users"><figcaption>User management — admin only</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/login.png" alt="PMS login"><figcaption>Sign in — email + password, bcrypt hashes</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/projects.png" alt="PMS projects"><figcaption>Projects — 8 real projects across all states</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/project-detail.png" alt="PMS project detail"><figcaption>Project detail — stats, members, tasks</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/tasks.png" alt="PMS tasks"><figcaption>Tasks — 28 tasks with status, priority, due dates</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/users.png" alt="PMS users"><figcaption>User management — admins, managers, members</figcaption></figure>
+      <figure class="shot"><img src="screenshots/pms/notifications.png" alt="PMS notifications"><figcaption>Notifications — assignment, project, overdue alerts</figcaption></figure>
     </div>
 
     <h3 class="section">Tech Stack</h3>

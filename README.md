@@ -28,9 +28,10 @@ docker compose up --build      # App: http://localhost:3000
 
 **What it solves:** a task tracker for small teams where tenant isolation is enforced at the database level with Postgres row-level security. Task board, per-project statistics, real-time updates over Socket.IO, and 151 unit/integration/e2e tests.
 
+- Live: https://pms-web-lilac.vercel.app
 - Code: https://github.com/Mahmod-mourad/Project-management-system
-- Stack: Next.js 14, NestJS, Supabase/PostgreSQL + RLS, Socket.IO, JWT + bcrypt, Swagger, Jest
-- Screenshots: `screenshots/pms/` (login, dashboard, projects, tasks, users)
+- Stack: Next.js 16, NestJS, Supabase/PostgreSQL + RLS, Socket.IO, JWT + bcrypt, Swagger, Jest
+- Screenshots: `screenshots/pms/` (login, dashboard, projects, project-detail, tasks, users, notifications)
 
 **How to Run:**
 ```bash
